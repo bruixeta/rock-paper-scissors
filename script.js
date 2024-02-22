@@ -33,18 +33,27 @@ function scoreCount(winner){
         }
     alert(`Game over! The winner is ${gameWinner}`);
     gameWinnerDiv.textContent = `The winner is ${gameWinner}`;
+    buttons.forEach((button) => {
+        button.removeEventListener('click', clickToPlay);
+    });
     }
 }
 
 
 const buttons = document.querySelectorAll('button');
 
+function clickToPlay(event){
+    let button = event.target;
+    if (button.tagName !== 'BUTTON') {
+        button = button.parentElement;
+    }
+    let computerSelection = getComputerSelection();
+    playRound(button.id, computerSelection);
+}
+
 
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        let computerSelection = getComputerSelection();
-        playRound(button.id, computerSelection);
-    });
+    button.addEventListener('click', clickToPlay);
 });
 
 
@@ -75,43 +84,6 @@ function playRound(playerSelection, computerSelection){
     return winner;
 }
 
-
-/*
-
-function playGame(){
-    score = [0,0];
-    let gameWinner;
-    let playerSelection;
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            playerSelection = button.id;
-        });
-    });
-    
-    //for (let i = 1; i < 6; i++) {
-        //let playerSelection = prompt("choose rock paper or scissors");
-        let computerSelection = getComputerChoice();
-        winner = playRound(playerSelection, computerSelection);
-                
-        if(winner==="Player") score[0] += 1;
-        else if (winner ==="Computer") score [1] += 1;
-
-        console.log("Player chose " + playerSelection + " and Computer chose " + computerSelection + ".")
-        console.log("The winner of Round " + i + " is " + winner + ".")
-        console.log("The current score is: Player(" + score[0] + ") vs. Computer(" + score[1] + ").")
-    //}
-    //if(score[0]>score[1]){
-       // gameWinner = "Player";
-    //}
-    //else if(score[1]>score[0]){
-     //   gameWinner = "Computer";
-    //}
-
-    console.log(gameWinner + " won the game! The final score was: Player(" + score[0] + ") vs. Computer(" + score[1] + ").")
-}
-
-
-*/
 
 
 
