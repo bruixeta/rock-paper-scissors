@@ -32,7 +32,7 @@ function scoreCount(winner){
             gameWinner = "Computer";
         }
     alert(`Game over! The winner is ${gameWinner}`);
-    gameWinnerDiv.textContent = `The winner is ${gameWinner}`;
+    gameWinnerDiv.textContent = `Game over! The winner is ${gameWinner}.`;
     buttons.forEach((button) => {
         button.removeEventListener('click', clickToPlay);
     });
@@ -77,9 +77,9 @@ function playRound(playerSelection, computerSelection){
     }
 
     scoreCount(winner);
-    roundWinner.textContent = `Winner: ${winner}`;
-    playerScore.textContent = `Player score: ${score[0]}`;
-    computerScore.textContent = `Computer score: ${score[1]}`;
+    roundWinner.textContent = `${winner}`;
+    playerScore.textContent = `${score[0]}`;
+    computerScore.textContent = `${score[1]}`;
     
     return winner;
 }

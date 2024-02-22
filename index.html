@@ -5,8 +5,12 @@
   <title>Rock Paper Scissors</title>
   <script src="script.js" defer></script> 
   <script src="https://kit.fontawesome.com/2257cdb0d3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Rock Paper Scissors</h1>
+  <div id="game-winner"></div>
+  <h2>Choose your fighter!</h2>
   <div id="buttons-container">
     <button id="rock"><i class="fa-regular fa-hand-back-fist"> ROCK</i></button>
     <button id="paper"><i class="fa-regular fa-hand"> PAPER</i></button>
@@ -15,13 +19,12 @@
   </div>
 
   <div id="result-container">
-    <div id="score">
-      Score
-      <div id="player-score"></div>
-      <div id="computer-score"></div>
+    <p>Score</p>
+    <div id="score-container">
+      <div class="score-box"><p>Player</p> <div id="player-score"></div></div>
+      <div class="score-box"><p>Computer</p> <div id="computer-score"></div></div>
     </div>
-    <div id="round-winner"></div>
-    <div id="game-winner"></div>
+    <p>Round winner: <div id="round-winner"></div></p>
   </div>
     
 
