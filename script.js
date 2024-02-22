@@ -2,7 +2,7 @@
 //method [].sample(). When applied, it returns a 
 //random element from the array
 
-
+const roundWinner = document.getElementById('round-winner');
 
 Array.prototype.sample = function(){
     return this[Math.floor(Math.random()*this.length)];
@@ -26,7 +26,7 @@ buttons.forEach((button) => {
 function playGame(playerSelection){
     let computerSelection = getComputerSelection();
     const winner = playRound(playerSelection, computerSelection);
-    console.log(winner);
+    roundWinner.textContent = `Winner: ${winner}`;
     return winner;
 }
 
