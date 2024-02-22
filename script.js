@@ -2,6 +2,7 @@
 //method [].sample(). When applied, it returns a 
 //random element from the array
 
+
 const roundWinner = document.getElementById('round-winner');
 const playerScore = document.getElementById('player-score');
 const computerScore = document.getElementById('computer-score');
